@@ -1,0 +1,199 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+body{
+    background-color: rgb(15, 8, 22);
+    color:whitesmoke;
+}
+.searchname,.reposearch{
+    box-sizing: border-box;
+    padding: 20px;
+    Display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+}
+.reposearch{
+    background-color: rgb(226, 226, 226);
+    height:250px;
+}
+.namesearch,.repotxt{
+   padding: 7px;
+    width:70%;
+    background-color: rgb(94, 45, 94);
+    border: none;
+    border-radius: 10px 0 10px 0;
+    color:rgb(167, 166, 166);
+}
+.namebtn,.repobtn{
+    padding:7px;
+    border:none;
+    background-color: rgb(202, 107, 221);
+    color: rgb(235, 225, 225);
+    font-weight: 500;
+    border-radius: 10px 0 10px 0;
+    margin-left: 10px;
+}
+.repotxt{
+    background-color: rgb(159, 185, 197);
+}
+.repobtn{
+    background-color: yellowgreen;
+    color:rgb(88, 88, 88);
+}
+.title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    margin-top: 10%;
+}
+.image{
+    width:50%;
+    height:50%;
+    object-fit: cover;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    transform:perspective(500px);
+    transition: transform 2s linear;
+    animation: image 4s ease infinite;
+    animation-delay: 1s;
+ 
+}
+@keyframes image {
+    0%{transform:rotate(0);}
+    25%{transform:rotateY(50deg)}
+    50%{transform:rotateY(-180deg)}
+    75%{transform:rotateX(50deg)}
+    100%{transform:rotateX(0deg) rotateY(0deg)}
+
+}
+
+.name{
+    font-size: 40px;
+    text-transform: capitalize;
+}
+.repocontainer,.repos
+{
+    margin-top: 10%;
+}
+#title{
+    font-size: 40px;
+    font-weight: 500;
+    text-align: center;
+}
+.repocontainer{
+    padding: 10%;
+}
+.repos{
+    background-color:rgb(226, 226, 226);
+    padding: 10px;
+    border-radius: 0 20px 0 20px;
+   display: grid;
+    grid-template-areas: "image image"
+                         "name  name"
+                         "fork  star";
+    justify-items: center;
+    gap:20px;
+    color:rgb(80, 79, 79);
+    font-size: 20px;
+    height: auto;
+    transform-style: preserve-3d;
+    transform: perspective(600px);
+    transition: 1s ease;
+    
+}
+.repos:hover{
+    transform:skewY(8deg) rotateY(20deg);
+    box-shadow: 3px 0px 20px whitesmoke;
+}
+
+#image1{
+    padding: 10px;
+    
+}
+#image1 img{
+    width:50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 50%;
+    box-shadow: 1px 1px 10px rgb(97, 96, 96);
+}
+.icons img{
+    width:20px;
+    height: 20px;
+    object-fit: contain;
+    
+}
+
+#reponame a:hover{
+    text-shadow: 1px 1px 3px rgb(139, 139, 139);
+}
+#reponame{
+    grid-area: name;
+}
+#reponame a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    color:rgb(61, 61, 61);
+ }
+ 
+#image1{
+    grid-area: image;
+}
+#fork{
+    grid-area: fork;
+}
+#star{
+    grid-area: star;
+}
+.icons{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+button:active{
+    transform: scale(1.2);
+}
+
+
+@media screen and (min-width:1000px)
+{
+    .namesearch,
+    .repotxt,
+    .namebtn,.repobtn
+    {
+         font-size: 3vh;
+         padding: 30px;
+         border-radius: 2vh 0 2vh 0;
+     }
+     .icons{
+        font-size: 3vh;
+     }
+     .name,#title{
+        font-size: 10vh;
+     }
+     #reponame a{
+         font-size: 5vh;
+     }
+     .reposearch{
+         height:50vh;
+     }
+     .icons img{
+        width:3vh;
+        height: 3vh;
+     }
+     #image1 img{
+        width:10vh;
+        height: 10vh;
+     }
+     .image{
+         width:30%;
+         height:30%;
+     }
+}
