@@ -89,7 +89,12 @@ function createRepo(repos)
 let username=[];
 function getname(name)
 {
-   username.push(name);
+    username.push(name);
+    if(username.length!=1)
+    {
+        username.splice(0,1);
+    }
+   
 }
 
 
